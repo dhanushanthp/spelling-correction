@@ -8,6 +8,7 @@ import java.util.List;
 public class Domain {
 	private double score;
 	private String term;
+	private int frequency;
 
 	public Domain(String term, double score) {
 		this.score = score;
@@ -63,5 +64,20 @@ public class Domain {
 		System.out.println(list);
 		Collections.sort(list, Domain.ScoreComparatorDecending);
 		System.out.println(list);
+	}
+
+	/**
+	 * @return the frequency
+	 */
+	public int getFrequency() {
+		return frequency;
+	}
+
+	/**
+	 * @param frequency
+	 *            the frequency to set
+	 */
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
 	}
 }
