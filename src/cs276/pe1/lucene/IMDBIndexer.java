@@ -28,11 +28,11 @@ public class IMDBIndexer {
 		for (MoviePlotRecord rec : IMDBParser.readRecords()) {
 
 			// index title
-			Field contentField = new Field(IMDBIndexer.TITLE, rec.title, Field.Store.YES, Field.Index.NOT_ANALYZED);
+			Field contentField = new Field(IMDBIndexer.TITLE, rec.title, Field.Store.YES, Field.Index.TOKENIZED);
 			// index authors
-			Field fileNameField = new Field(IMDBIndexer.AUTHORs, rec.authors, Field.Store.YES, Field.Index.NOT_ANALYZED);
+			Field fileNameField = new Field(IMDBIndexer.AUTHORs, rec.authors, Field.Store.YES, Field.Index.TOKENIZED);
 			// index plots
-			Field filePathField = new Field(IMDBIndexer.PLOTS, rec.plots, Field.Store.YES, Field.Index.NOT_ANALYZED);
+			Field filePathField = new Field(IMDBIndexer.PLOTS, rec.plots, Field.Store.YES, Field.Index.TOKENIZED);
 
 			d = new Document();
 
